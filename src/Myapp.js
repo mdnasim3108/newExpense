@@ -14,7 +14,7 @@ const MyApp = (props) => {
   const [cookies]=useCookies(['name'])
   const [expense, setExpense] = useState([]);
   useEffect(async()=>{
-        await axios.post("https://expense-server-production.up.railway.app/getExpense",{Name:cookies.name})
+        await axios.post("expense-server-production-215b.up.railway.app/getExpense",{Name:cookies.name})
         .then((res)=>{
           setExpense(res.data.expenses.map((item)=>{
             return {...item,date:new Date(item.date)}
@@ -27,7 +27,7 @@ const MyApp = (props) => {
     });
     console.log(data)
     
-    axios.post("https://expense-server-production.up.railway.app/addExpense",{
+    axios.post("expense-server-production-215b.up.railway.app/addExpense",{
          item:data,
          Name:cookies.name
     })
