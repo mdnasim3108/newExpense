@@ -27,7 +27,7 @@ const SignUp = (props) => {
             alert("Please fill all the fields")
             return
         }
-        axios.post('https://expense-server-production-215b.up.railway.app/signUp', { Name: name + " " + lastName, email: email, password: password })
+        axios.post('https://expense-oykv.onrender.com/signUp', { Name: name + " " + lastName, email: email, password: password })
             .then((res) => console.log(res.data))
         props.login()
     }
