@@ -16,7 +16,7 @@ const Login = (props) => {
             alert("Please enter the mandatory fields")
             return
         }
-        axios.post("https://expense-server-production-215b.up.railway.app/login", { email: email, password: password })
+        axios.post("https://expense-oykv.onrender.com/login", { email: email, password: password })
             .then((res) => {
                 if (res.data.email === email) {
                     props.confirmAuth(res.data.Name)
